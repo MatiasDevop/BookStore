@@ -40,6 +40,7 @@ namespace BookStore.API
 
             services.AddControllers();
 
+            services.AddCors();
            
 
             services.AddSwaggerGen(c =>
@@ -60,6 +61,8 @@ namespace BookStore.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore.API v1"));
             }
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
