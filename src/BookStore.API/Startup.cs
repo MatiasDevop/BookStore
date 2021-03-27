@@ -22,6 +22,11 @@ namespace BookStore.API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            var allowedHosts = configuration["AllowedHosts"];
+
+            var allowedHosts1 = configuration.GetValue<string>("AllowedHosts");
+
         }
 
         public IConfiguration Configuration { get; }

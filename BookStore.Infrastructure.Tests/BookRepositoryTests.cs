@@ -15,8 +15,8 @@ namespace BookStore.Infrastructure.Tests
         public BookRepositoryTests()
         {
             // Use this when using SqlLite inMemory database
-            _options = BookRepositoryTests.BookStoreDbContextOptionsSQLiteInMemory();
-            BookStoreHelperTests.CreateDataBaseSQLiteInMemory(_options);
+            //_options = BookRepositoryTests.BookStoreDbContextOptionsSQLiteInMemory();
+            //BookStoreHelperTests.CreateDataBaseSQLiteInMemory(_options);
 
             // Use this. When Using a Ef Core InMemory database
             // _Optioon = BookStoreHelperTest.BookStoreDbContextOptionsEfCoreInMemory();
@@ -41,7 +41,7 @@ namespace BookStore.Infrastructure.Tests
         [Fact]
         public async void GetAll_ShouldRetunAnEmptyList_WhenBooksDoNotExist()
         {
-            await BookStoreHelperTests.CleanDataBase(_options);
+           // await BookStoreHelperTests.CleanDataBase(_options);
 
             await using (var context = new BookStoreDbContext(_options))
             {
@@ -111,7 +111,7 @@ namespace BookStore.Infrastructure.Tests
         [Fact]
         public async void GetById_ShouldReturnNull_WhenBookWithSearchedIdDoesNotExist()
         {
-            await BookStoreHelperTests.CleanDataBase(_options);
+            //await BookStoreHelperTests.CleanDataBase(_options);
 
             await using (var context = new BookStoreDbContext(_options))
             {
